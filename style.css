@@ -27,7 +27,7 @@ body {
     color: rgb(255, 255, 255);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-#title{
+.slide{
     animation-name: slide;
     animation-duration: 3s;
 }
