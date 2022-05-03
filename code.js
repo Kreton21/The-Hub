@@ -23,9 +23,23 @@ function transition(elem, styleProps) {
       elem.classList.add(animation);
     });
   }
+function showCircle(cx, cy, radius) {
+    const div = document.getElementById('circle');
+    div.style.width = 0;
+    div.style.height = 0;
+    div.style.left = cx + 'px';
+    div.style.top = cy + 'px';
+    div.className = 'circle';
+
+    setTimeout(() => {
+      div.style.width = radius * 2 + 'em';
+      div.style.height = radius * 2 + 'em';
+    }, 0);
+  }
 async function init() {
     const title = document.getElementById("title");
     await animate(title,"slide");
+    showCircle(10, 10, 100);
     console.log("Animation ended");
 }
 document.addEventListener("DOMContentLoaded", (e) => {
