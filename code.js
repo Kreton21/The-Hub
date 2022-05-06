@@ -25,22 +25,35 @@ function transition(elem, styleProps) {
   }
 function showCircle(cx, cy, radius) {
     const div = document.getElementById('circle');
+    const html = document.getElementById('html')
     div.style.width = 0;
     div.style.height = 0;
     div.style.left = cx + 'px';
     div.style.top = cy + 'px';
     div.className = 'circle';
-
     setTimeout(() => {
-      div.style.width = radius * 2 + 'em';
-      div.style.height = radius * 2 + 'em';
-    }, 0);
+      div.style.width = radius * 2 + '%';
+      div.style.height = radius * 2 + 'vw';
+      console.log(div.style.height)
+
+        }, 0);
   }
 async function init() {
+
     const title = document.getElementById("title");
+    const menu = document.getElementById("menu-item");
+    menu.style.display = 'none'
     await animate(title,"slide");
-    showCircle(10, 10, 100);
+    menu.style.display = 'flex'
+    animate(menu, "slidem")
+    showCircle(0, 0, 75);
     console.log("Animation ended");
 }
 document.addEventListener("DOMContentLoaded", (e) => {
+    const menuitems=document.getElementsByClassName('menu-item')
+    console.log(menuitems.length)
+    x = menuitems.length
+    
+    // Set margin top to all menu-items at x + 1 /100 vh
+    // Play animation 1 by 1 
     init(); })

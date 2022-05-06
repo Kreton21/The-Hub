@@ -5,6 +5,7 @@ html{
     width: 100%;
 }
 body {
+    overflow: hidden;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -12,11 +13,30 @@ body {
     background-color: rgb(69, 84, 88);
 }
 .page{ 
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0;
     height: 100%;
     width: 100%;
 }
+.menu{
+    position: relative;
+    right: -75vw;
+    width: 25vw;
+    height: 100vh;
+    background-color: blue;
+    top: 0vh;
+    display: grid;
+}
+.menu-item{
+    position: relative;
+    height: 10vh;
+    width: 25vw;
+    background-color: beige;
+}
 .title {
-
+    position: fixed;
     font-size: 10em;
     color: rgb(255, 38, 0);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -30,6 +50,15 @@ body {
 .slide{
     animation-name: slide;
     animation-duration: 3s;
+}
+.slidem{
+    animation-name: slidem;
+    animation-duration: 2s;
+}
+@keyframes slidem {
+    0% {right: -25vw;}
+    100% {right: 0vw;}
+
 }
 @keyframes slide{
     0% {top: -5em;}
@@ -57,11 +86,11 @@ p {
 }
 
 .circle {
+    
     transition-property: width, height;
     transition-duration: 2s;
     position: absolute;
     margin: auto;
-    overflow: hidden;
     text-align: center ;
     transform: translateX(-50%) translateY(-50%);
     background-color: rgb(0, 0, 0);
