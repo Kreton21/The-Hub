@@ -1,4 +1,7 @@
 // common function to apply one transition rule
+function sleep(ms){
+  return new Promise(resolve => setTimeout(resolve,ms));
+}
 function transition(elem, styleProps) {
     return new Promise((resolve, reject) => {
       function handleTransitionEnd() {
@@ -17,6 +20,11 @@ function transition(elem, styleProps) {
     return new Promise((resolve, reject) => {
       function handleAnimationEnd() {
         console.log("animation ended...");
+        if (animation == 'slide'){
+          console.log('Clack ;;;')
+          var audio = new Audio('assets/switch-sound.mp3');
+          audio.play();
+        }
         resolve(elem);
       }
       elem.addEventListener("animationend", handleAnimationEnd, { once: true });
@@ -38,22 +46,36 @@ function showCircle(cx, cy, radius) {
 
         }, 0);
   }
+async function eanimation(menuitems){
+  for (var i = 0;i<x;i++){
+    var box = menuitems[i];
+    box.style.display = 'flex'
+    animate(box, "slidem")
+    await sleep (300)
+  }
+}
+
 async function init() {
+    const menuitems=document.getElementsByClassName('menu-item');
+    console.log(menuitems.length);
+    x = menuitems.length;
+    
+    
+    for (var i = 0;i<x;i++){
+      var box = menuitems[i];
+      box.style.display = 'none'
+      box.style.marginTop = (100/ (x+1))-10 + "vh"
+    }
+
 
     const title = document.getElementById("title");
-    const menu = document.getElementById("menu-item");
-    menu.style.display = 'none'
     await animate(title,"slide");
-    menu.style.display = 'flex'
-    animate(menu, "slidem")
+    eanimation(menuitems)
     showCircle(0, 0, 75);
     console.log("Animation ended");
 }
 document.addEventListener("DOMContentLoaded", (e) => {
-    const menuitems=document.getElementsByClassName('menu-item')
-    console.log(menuitems.length)
-    x = menuitems.length
-    
+
     // Set margin top to all menu-items at x + 1 /100 vh
     // Play animation 1 by 1 
     init(); })

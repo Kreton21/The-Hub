@@ -25,11 +25,14 @@ body {
     right: -75vw;
     width: 25vw;
     height: 100vh;
-    background-color: blue;
+    /* background-color: blue; */
     top: 0vh;
+    
     display: grid;
 }
 .menu-item{
+    border-radius:  4vw 0px 0px 4vw;
+    margin: 0%;
     position: relative;
     height: 10vh;
     width: 25vw;
