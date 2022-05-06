@@ -89,7 +89,7 @@ p {
 }
 
 .circle {
-    
+    /* content:url(assets/external-content.duckduckgo.com.png); */
     transition-property: width, height;
     transition-duration: 2s;
     position: absolute;
