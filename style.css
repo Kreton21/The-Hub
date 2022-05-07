@@ -36,17 +36,17 @@ body {
     position: relative;
     height: 10vh;
     width: 25vw;
-    background-color: beige;
+    background-color: rgb(32, 32, 32);
 }
 .title {
     position: fixed;
-    font-size: 10em;
+    font-size: 10vw;
     color: rgb(255, 38, 0);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .title-s{
     position: relative;
-    font-size: 10em;
+    font-size: 10vw;
     color: rgb(255, 255, 255);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -72,7 +72,7 @@ span.title {
     position: relative;
     top: 50%;
     padding-top: 50px;
-    padding-right: 30px;
+    padding-right: 3vw;
     /* padding-bottom: 50px;
     padding-left: 80px; */
   }
