@@ -34,6 +34,21 @@ function transition(elem, styleProps) {
 function showCircle(cx, cy, radius) {
     const div = document.getElementById('circle');
     const html = document.getElementById('html')
+    if ((html.clientWidth/html.clientHeight)<1){
+      div.style.width = 0;
+      div.style.height = 0;
+      div.style.left = cx + 'px';
+      div.style.top = cy + 'px';
+      div.className = 'circle';
+      setTimeout(() => {
+        div.style.width = 200 + 'vw';
+        div.style.height = 100 + 'vh';
+        console.log(div.style.height)
+  
+          }, 0);
+    }
+    else{
+
     div.style.width = 0;
     div.style.height = 0;
     div.style.left = cx + 'px';
@@ -45,6 +60,7 @@ function showCircle(cx, cy, radius) {
       console.log(div.style.height)
 
         }, 0);
+      }
   }
 async function eanimation(menuitems){
   for (var i = 0;i<x;i++){
@@ -56,17 +72,26 @@ async function eanimation(menuitems){
 }
 
 async function init() {
+    const html = document.getElementById('html')
     const menuitems=document.getElementsByClassName('menu-item');
     console.log(menuitems.length);
     x = menuitems.length;
-    
-    
+
+    if ((html.clientWidth/html.clientHeight)<1){
+      console.log("RRRR")
+      for (var i = 0;i<x;i++){
+        var box = menuitems[i];
+        box.style.display = 'none'
+        box.style.marginTop = (50/ (x+1))-10 + "vh"
+      }
+    }
+    else{
     for (var i = 0;i<x;i++){
       var box = menuitems[i];
       box.style.display = 'none'
       box.style.marginTop = (100/ (x+1))-10 + "vh"
     }
-
+    }
 
     const title = document.getElementById("title");
     await animate(title,"slide");

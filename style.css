@@ -20,16 +20,15 @@ body {
     height: 100%;
     width: 100%;
 }
-.menu{
-    position: relative;
-    right: -75vw;
-    width: 25vw;
-    height: 100vh;
-    /* background-color: blue; */
-    top: 0vh;
-    
-    display: grid;
-}
+.title-cont{
+    width: 50%;
+    margin: 0 auto;
+    position:fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    right: 50vw;}
+
 .menu-item{
     border-radius:  4vw 0px 0px 4vw;
     margin: 0%;
@@ -58,11 +57,7 @@ body {
     animation-name: slidem;
     animation-duration: 2s;
 }
-@keyframes slidem {
-    0% {right: -25vw;}
-    100% {right: 0vw;}
 
-}
 @keyframes slide{
     0% {top: -5em;}
     90% {top: -0.3em;}
@@ -104,4 +99,50 @@ p {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+
+@media only screen and (min-width: 600px) {
+    @keyframes slidem {
+        0% {right: -25vw;}
+        100% {right: 0vw;}
+    
+    }
+    .menu{
+        position: relative;
+        right: -75vw;
+        width: 25vw;
+        height: 100vh;
+        /* background-color: blue; */
+        top: 0vh;
+        display: grid;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    @keyframes slidem {
+        0% {right: -100vw;}
+        100% {right: 0vw;}
+    
+    }
+    .title-cont{
+        right: 30vw;
+        top:15vh;
+        width: auto;
+        transform:translateY(0%)
+
+    }
+    .title{font-size: 20vw;}
+    .title-s{font-size: 20vw;}
+    .circle{height: 100vh;max-height: 100vh;}
+    .menu-item{width: 100vw;    border-radius:  10vw 0px 0px 10vw;    }
+    .menu-s{
+        position: relative;
+        right: 0vw;
+        width: 100vw;
+        height: 50vh;
+        /* background-color: blue; */
+        top: 50vh;
+        display: grid;
+    }
 }
