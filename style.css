@@ -102,7 +102,6 @@ p {
 }
 
 
-@media only screen and (min-aspect-ratio: 1) {
     @keyframes slidem {
         0% {right: -25vw;}
         100% {right: 0vw;}
@@ -117,18 +116,23 @@ p {
         top: 0vh;
         display: grid;
     }
-}
+
+
 .menu-item:hover {
     background-color: darkred;
     transition: 0.2s;
   }
 
-@media only screen and (max-aspect-ratio:1) {
+@media only screen and (max-aspect-ratio:1/1) {
     @keyframes slidem {
         0% {right: -100vw;}
         100% {right: -10vw;}
     
     }
+    .menu-item:hover {
+        background-color: rgb(0, 139, 5);
+        transition: 0.2s;
+      }
     .title-cont{
         right: 30vw;
         top:15vh;
