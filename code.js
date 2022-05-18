@@ -22,8 +22,8 @@ function transition(elem, styleProps) {
         console.log("animation ended...");
         if (animation == 'slide'){
           console.log('Clack ;;;')
-          var audio = new Audio('assets/switch-sound.mp3');
-          audio.play();
+          // var audio = new Audio('assets/switch-sound.mp3');
+          // audio.play();
         }
         resolve(elem);
       }
