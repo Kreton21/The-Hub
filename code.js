@@ -23,7 +23,7 @@ function transition(elem, styleProps) {
         if (animation == 'slide'){
           console.log('Clack ;;;')
           var audio = new Audio('assets/switch-sound.mp3');
-          audio.play();
+          // audio.play();
         }
         resolve(elem);
       }
